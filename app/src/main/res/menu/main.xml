@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/switch_lang"
+        android:title="@string/switch_languages" />
+    <item
+        android:id="@+id/conver_tem"
+        android:title="@string/conversion_temperature" />
+    <item
+        android:id="@+id/lo_la"
+        android:title="@string/lon_lat_conversion" />
+</menu>

@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background_picture"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rain"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:id="@+id/weather_layout_choose_city"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <Spinner
+                android:id="@+id/weather_spinner_city"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:overlapAnchor="false"
+                android:layout_weight="1"
+                android:popupBackground="@null"
+                android:spinnerMode="dropdown" />
+
+            <ImageView
+                android:id="@+id/search_city"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:background="@drawable/search"
+                android:clickable="true"
+                android:layout_gravity="center"
+                android:visibility="invisible" />
+
+            <EditText
+                android:id="@+id/weather_enter_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/enter_city"
+                android:imeOptions="actionSend"
+                android:inputType="text"
+                android:maxLength="50"
+                android:visibility="invisible" />
+
+
+            <ImageView
+                android:id="@+id/weather_setting"
+                android:layout_width="40dp"
+                android:layout_height="44dp"
+                android:background="@drawable/more"
+                android:clickable="true" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/weather_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/weather_currecttemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=""
+                    android:textSize="50sp" />
+                <TextView
+                    android:id="@+id/weather_temp_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=""
+                    android:textSize="40sp" />
+                <TextView
+                    android:id="@+id/weather_condition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=""
+                    android:textSize="30sp" />
+                <TextView
+                    android:id="@+id/weather_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text=""
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="500dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/line"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="188dp">
+
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/weather_date"
+                    android:layout_marginTop="10dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:stretchColumns="*">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/weather_today"
+                                android:layout_width="wrap_content"
+                                android:layout_height="44dp"
+                                android:layout_gravity="center"
+                                android:text=""
+                                android:textSize="25dp" />
+
+                            <TextView
+                                android:id="@+id/weather_today_temp"
+                                android:layout_width="match_parent"
+                                android:layout_height="44dp"
+                                android:layout_gravity="center"
+                                android:text=""
+                                android:textSize="20dp" />
+
+
+                            <ImageView
+                                android:id="@+id/weather_icon1"
+                                android:layout_width="60dp"
+                                android:layout_height="80dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/cloudy" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/weather_nextoneday"
+                                android:layout_width="wrap_content"
+                                android:layout_height="44dp"
+                                android:layout_gravity="center"
+                                android:text=""
+                                android:textSize="25dp" />
+
+
+                            <TextView
+                                android:id="@+id/weather_nextoneday_temp"
+                                android:layout_width="match_parent"
+                                android:layout_height="44dp"
+                                android:layout_gravity="center"
+                                android:text=""
+                                android:textSize="20dp" />
+
+
+                            <ImageView
+                                android:id="@+id/weather_icon2"
+                                android:layout_width="69dp"
+                                android:layout_height="80dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/cloudy" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/weather_nexttwoday"
+                                android:layout_width="wrap_content"
+                                android:layout_height="44dp"
+                                android:layout_gravity="center"
+                                android:text=""
+                                android:textSize="25dp" />
+
+
+                            <TextView
+                                android:id="@+id/weather_nexttwoday_temp"
+                                android:layout_width="match_parent"
+                                android:layout_height="44dp"
+                                android:layout_gravity="center"
+                                android:text=""
+                                android:textSize="20dp" />
+
+
+                            <ImageView
+                                android:id="@+id/weather_icon3"
+                                android:layout_width="69dp"
+                                android:layout_height="80dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/cloudy" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/weather_nextthreeday"
+                                android:layout_width="wrap_content"
+                                android:layout_height="44dp"
+                                android:layout_gravity="center"
+                                android:text=""
+                                android:textSize="25dp" />
+
+                            <TextView
+                                android:id="@+id/weather_nextthreeday_temp"
+                                android:layout_width="match_parent"
+                                android:layout_height="44dp"
+                                android:layout_gravity="center"
+                                android:text=""
+                                android:textSize="20dp" />
+
+
+                            <ImageView
+                                android:id="@+id/weather_icon4"
+                                android:layout_width="69dp"
+                                android:layout_height="80dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/cloudy" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/weather_nextfourday"
+                                android:layout_width="wrap_content"
+                                android:layout_height="44dp"
+                                android:layout_gravity="center"
+                                android:text=""
+                                android:textSize="25dp" />
+
+
+                            <TextView
+                                android:id="@+id/weather_nextfourday_temp"
+                                android:layout_width="match_parent"
+                                android:layout_height="44dp"
+                                android:layout_gravity="center"
+                                android:text=""
+                                android:textSize="20dp" />
+
+                            <ImageView
+                                android:id="@+id/weather_icon5"
+                                android:layout_width="69dp"
+                                android:layout_height="80dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/cloudy" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/weather_nextfiveday"
+                                android:layout_width="wrap_content"
+                                android:layout_height="44dp"
+                                android:layout_gravity="center"
+                                android:text=""
+                                android:textSize="25dp" />
+
+                            <TextView
+                                android:id="@+id/weather_nextfiveday_temp"
+                                android:layout_width="match_parent"
+                                android:layout_height="44dp"
+                                android:layout_gravity="center"
+                                android:text=""
+                                android:textSize="20dp" />
+
+
+                            <ImageView
+                                android:id="@+id/weather_icon6"
+                                android:layout_width="69dp"
+                                android:layout_height="80dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/cloudy" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/weather_nextsixday"
+                                android:layout_width="wrap_content"
+                                android:layout_height="44dp"
+                                android:layout_gravity="center"
+                                android:text=""
+                                android:textSize="25dp" />
+
+
+                            <TextView
+                                android:id="@+id/weather_nextsixday_temp"
+                                android:layout_width="match_parent"
+                                android:layout_height="44dp"
+                                android:layout_gravity="center"
+                                android:text=""
+                                android:textSize="20dp" />
+
+
+                            <ImageView
+                                android:id="@+id/weather_icon7"
+                                android:layout_width="69dp"
+                                android:layout_height="80dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/cloudy" />
+                        </TableRow>
+                    </TableLayout>
+                </ScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="500dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/line" />
+
+                    <TextView
+                        android:id="@+id/weather_today_tip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text=""
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/weather_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/tipInfo"
+                        android:textSize="20dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
